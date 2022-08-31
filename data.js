@@ -1,1 +1,0 @@
-export const data = [{id:1, todo:"walk the dog"},{id:2, todo:"eat dinner"}]
