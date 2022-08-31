@@ -1,5 +1,7 @@
-
-const data = [{id:1, todo:"walk the dog"},{id:2, todo:"eat dinner"}]
+const data = [
+  { id: 1, todo: "go to Hampstead Heath" },
+  { id: 2, todo: "play with ;,,l;,;l,Kabir" },
+];
 
 document.title = "My Todo List";
 // const input = document.createElement("input");
@@ -13,18 +15,20 @@ document.title = "My Todo List";
 
 // button.addEventListener("click", handleClick)
 
+function handleClick() {
+  console.log("this is working");
+  let ul = document.querySelector("#list");
+  let inputValue = document.querySelector("#todoField").value;
+  data.push(inputValue);
 
-function handleClick (){
-    console.log("this is working")
-    let ul = document.querySelector("#lists")
-    let inputValue = document.querySelector("#todoField").value
-    let newLi = document.createElement("li");
-    newLi.innerText = inputValue
-    ul.appendChild(newLi);
-    
-    // data.map(function(todo){
-    //     return newLi
-    // })
+  let newLi = document.createElement("li");
+  newLi.innerText = inputValue;
+  ul.appendChild(newLi);
 }
 
-
+let ul = document.querySelector("#list");
+data.map(function (item) {
+  let newLi = document.createElement("li");
+  newLi.innerText = item.todo;
+  ul.appendChild(newLi);
+});
