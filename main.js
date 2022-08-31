@@ -15,11 +15,12 @@ document.title = "My Todo List";
 
 
 function handleClick (){
-    let ul = document.querySelector("lists")
+    console.log("this is working")
+    let ul = document.querySelector("#lists")
     let inputValue = document.querySelector("#todoField").value
-    const newLi = document.createElement("li");
+    let newLi = document.createElement("li");
     newLi.innerText = inputValue
-    ul.appendChild(newLi)
+    ul.appendChild(newLi);
     
     // data.map(function(todo){
     //     return newLi
