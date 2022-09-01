@@ -1,7 +1,13 @@
-const data = [
-  { id: 1, todo: "go to Hampstead Heath" },
-  { id: 2, todo: "play with Kabir" },
-];
+// const data = [
+//   { id: 1, todo: "go to Hampstead Heath" },
+//   { id: 2, todo: "play with Kabir" },
+// ];
+// This is redundant for now as we don't have time to make the pushed array
+// item display in the above format
+
+ const data = ["go to Hampstead Heath", "play with Kabir"]
+
+// const data = []
 
 document.title = "My Todo List";
 // const input = document.createElement("input");
@@ -14,17 +20,29 @@ document.title = "My Todo List";
 // document.body.appendChild(button);
 
 // button.addEventListener("click", handleClick)
-
+let ul = document.querySelector("#list");
+ 
 function handleClick() {
   console.log("this is working");
   let ul = document.querySelector("#list");
   let inputValue = document.querySelector("#todoField").value;
-//   data.push(inputValue);
-
+  data.push(inputValue);
+  console.log(data)
   let newLi = document.createElement("li");
-  newLi.innerText = inputValue;
+  newLi.innerText = data[data.length-1];
   ul.appendChild(newLi);
 }
+//     data.map(function (item) {
+//     let newLi = document.createElement("li");
+//     newLi.innerText = item;
+//     ul.appendChild(newLi);
+//   });
+
+  //let newLi = document.createElement("li");
+//   newLi.innerText = inputValue;
+//   ul.appendChild(newLi);
+
+
 // What the function is doing: Lines 18- 27
 // this function is called to action in the button section in HTML file
 // We are getting the value from the user input and then displaying as li
@@ -32,12 +50,12 @@ function handleClick() {
 // grabbing the input from the user and storing it in inputValue 
 // And then adding the new li under the ul
 
-let ul = document.querySelector("#list");
-data.map(function (item) {
-  let newLi = document.createElement("li");
-  newLi.innerText = item.todo;
-  ul.appendChild(newLi);
-});
+// let ul = document.querySelector("#list");
+//   data.map(function (item) {
+//   let newLi = document.createElement("li");
+//   newLi.innerText = item;
+//   ul.appendChild(newLi);
+// });
 
 //Below is the refactored code of map method with the for loop
 
