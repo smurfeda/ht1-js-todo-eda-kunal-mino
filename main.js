@@ -4,6 +4,12 @@ const data = [
 ];
 
 let ul = document.querySelector("#list");
+
+data.map(function (item) {
+  let newLi = document.createElement("li");
+  newLi.innerText = item.todo;
+  ul.appendChild(newLi);
+});
  
 function handleClick() {
   console.log("this is working");
@@ -15,11 +21,7 @@ function handleClick() {
   newLi.innerText = data[data.length-1].todo;
   ul.appendChild(newLi);
 }
-    data.map(function (item) {
-    let newLi = document.createElement("li");
-    newLi.innerText = item.todo;
-    ul.appendChild(newLi);
-  });
+   
 
 
 // What the function is doing: Lines 18- 27
